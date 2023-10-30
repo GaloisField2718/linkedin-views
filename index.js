@@ -5,7 +5,7 @@ const cheerio = require('cheerio')
 const chalk = require('chalk')
 
 // Start scraping
-let rawHtml = fs.readFileSync('./raw/LinkedIn.htm').toString()
+let rawHtml = fs.readFileSync('./raw/LinkedIn.html').toString()
 let $ = cheerio.load(rawHtml)
 let searchString = 'code[id^="bpr"]:contains("fs_wvmpCard")'
 let data = JSON.parse(decodeEntities($(searchString).html()))
